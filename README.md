@@ -9,7 +9,6 @@ Employee Manager is a Node CLI tool that allows users to manage the departments,
 - [Installation](#installation)
 - [Usage](#usage)
 - [Example Usage](#example-usage)
-- [License](#license)
 - [Contributing](#contributing)
 - [Questions](#questions)
 
