@@ -36,6 +36,18 @@ class DatabaseConnection {
     );
   }
 
+  getAllEmployeesByManager(manager, cb) {
+    this.runQuery(
+      `SELECT e.id, first_name, last_name, title, department, salary FROM employees e
+      INNER JOIN positions ON e.position_id = positions.id
+      INNER JOIN departments ON positions.department_id = departments.id
+      WHERE ?
+      ORDER BY e.id;`,
+      manager,
+      cb
+    );
+  }
+
   getALLEmployeesByDepartment(department, cb) {
       this.runQuery(
         `SELECT e.id, e.first_name, e.last_name, title, salary,

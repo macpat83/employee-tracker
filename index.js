@@ -1,12 +1,12 @@
 const inquirer = require("inquirer");
-const { start } = require("repl");
+const cTable = require("console.table");
 const DatabaseConnection = require("./db");
 
 const dbc = new DatabaseConnection ({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "password",
+    password: "D:Ue5kj2/_#!Adi",
     database: "employees_db"
 });
 
@@ -26,7 +26,7 @@ const actions = [
   {name: "View Total Budget of Department", value: viewTotalBudgetOfDepartment},
   {name: "Add Department", value: addDepartment},
   {name: "Delete Department", value: deleteDepartment},
-  {name: "Exit", value: exit}
+  {name: "Quit", value: quit}
 ];
 
 dbc.connect(() => begin());
@@ -362,7 +362,7 @@ function addEmployee() {
           handler(res);
         }
       }
-      start();
+      begin();
     };
   }
   
